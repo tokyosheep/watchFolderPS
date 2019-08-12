@@ -11,7 +11,7 @@ window.onload = () =>{
     const path = require("path");
     const chokidar = require("chokidar");
     let watcher = null;//最初にwatcher自体にnullを代入しないとcloseメソッドが正常に動かないよう
-    const extList = [".psd",".tiff",".psb"];
+    const extList = [".psd",".tif",".tiff",".psb"];
     
     const watchStart = document.getElementById("watchStart");
     const watchStop = document.getElementById("watchStop");
