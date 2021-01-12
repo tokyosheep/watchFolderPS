@@ -1,51 +1,79 @@
 /*
-obj = {
-    path:"/Users/kawanoshuji/Desktop/testFolder/dog.psd"
+#include "./parts/save.jsx";
+
+
+var obj = {
+    "path": "/Users/kawanoshuji/Desktop/test/IMG_1308.jpeg",
+    "options": {
+        "targetExts": {
+            "jpg": true,
+            "tiff": true,
+            "psd": true,
+            "psb": false,
+            "png": false,
+            "gif": false,
+            "eps": false
+        },
+        "saveExts": {
+            "jpg": true,
+            "tiff": false,
+            "psd": false,
+            "psb": false,
+            "png": false,
+            "gif": false,
+            "eps": false
+        },
+        "options": {
+            "isSave": true,
+            "isAction": false,
+            "isExport": true
+        },
+        "actionList": {
+            "action": {
+                "name": "トーンジャンプ",
+                "index": 6
+            },
+            "set": {
+                "name": "河野",
+                "index": 5
+            }
+        },
+        "watchFolder": "/Users/kawanoshuji/Desktop/test/",
+        "exportFolder": "/Users/kawanoshuji/Desktop/ex/",
+        "watchFlag": false
+    }
 }
-exportJpg(obj);
+
+hostScript(obj);
 */
-function exportJpg(obj){
-    var path = new File(obj.path);
+function hostScript(obj){
     try{
+        var path = new File(obj.path);
         app.open(path);
+        var initLength = app.activeDocument.length;
+        if(obj.options.options.isAction){
+            doAction(obj.options.actionList.action.name,obj.options.actionList.set.name);
+        }
+        if(initLength !== app.activeDocument.length)return false;
+        if(obj.options.options.isSave){
+            for(var p in obj.options.saveExts){
+                if(obj.options.saveExts[p]){
+                    var filePath = getSavePath(obj.options.options.isExport, obj.options.watchFolder, obj.options.exportFolder ,p);
+                    saveExts(p,filePath);
+                    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+                }
+            }
+        }
     }catch(e){
         alert(e);
         return false;
     }
-    var fullPath = activeDocument.fullName;
-    var name = activeDocument.name;
-    var folderPath = activeDocument.path + "/jpeg";
-    var finishPath = activeDocument.path + "/finished";
-    makefolder(folderPath,finishPath);
-    saveJpeg(folderPath +"/"+ name);
-    activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-    moveFile(fullPath,finishPath + "/" + name);
+    return true;
 }
 
-function makefolder(){
-    for(var no =0; no<arguments.length; no++){//引数に渡された数だけフォルダを作る
-        var folderObj = new Folder(arguments[no]);
-        folderObj.create();
-    }
+function getSavePath(isExport,watchFolder,exportFolder,ext){
+    if(isExport)return exportFolder;
+    makefolder(watchFolder+ext+"/");
+    return watchFolder+ext+"/";
 }
 
-function saveJpeg(file){
-    fileObj = new File(file);
-    jpegOpt = new JPEGSaveOptions();
-    jpegOpt.embedColorProfile = true;
-    jpegOpt.quality = 10;
-    jpegOpt.formatOptions = FormatOptions.PROGRESSIVE;
-    jpegOpt.scans = 3;
-    jpegOpt.matte = MatteType.NONE;
-    activeDocument.saveAs(fileObj, jpegOpt, true, Extension.LOWERCASE);
-}
-
-function moveFile(before,after){
-    var file = new File(before);
-    var flag = file.copy(after);
-    if(!flag){
-        alert("It can't be copied");
-        return;
-    }
-    file.remove();
-}

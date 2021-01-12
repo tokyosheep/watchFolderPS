@@ -3,33 +3,14 @@
 <head>
 <meta charset="utf-8">
         
-<link rel="stylesheet" href="css/topcoat-desktop-dark.min.css"/>
 <link  id="hostStyle" rel="stylesheet" href="css/styles.css"/>
 
-<title></title>
+<title>watch folder</title>
 </head>
 
 <body class="hostElt">
-    <div id="watchButtons">
-        <button id="watchStart" class="topcoat-button--large--cta">watch start</button>
-        <button id="watchStop" class="topcoat-button--large hostFontSize">watch stop</button>
-    </div>
-    <div id="content">         
-        <button id="selectFolder" class="topcoat-button--large hostFontSize">select folder</button>
-        <h2>Folder Name</h2> 
-        <span id="FolderName"></span>               
-    </div>
-    
-    <!-- These are debugging shortcuts.  Class debuglink items only appear in debug mode  -->
-    <span class="debuglink" id="reload">Reload</span>
-    <span class="debuglink" id="debug">Debug</span>
-    <span class="debuglink" id="sources">Sources</span>
-    
-    <script src="js/libs/CSInterface.js"></script>
-
-    <script src="js/themeManager.js"></script>
-    <script src="js/main.js"></script>
-
-        
+    <div id="root"></div>
 </body>
+    <script src="js/libs/CSInterface.js"></script>
+    <script src="dist/main.min.js"></script>
 </html>

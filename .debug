@@ -2,7 +2,7 @@
 <ExtensionList>
     <Extension Id="watchFolderPS">
         <HostList>
-           
+    
             <!-- Comment Host tags according to the apps you want your panel to support -->
             
             <!-- Photoshop -->

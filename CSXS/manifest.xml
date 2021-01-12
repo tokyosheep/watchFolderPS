@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="7.0" ExtensionBundleId="watchFolderPS" ExtensionBundleVersion="1.0.0"
+<ExtensionManifest Version="7.0" ExtensionBundleId="watchFolderPS" ExtensionBundleVersion="2.0.0"
 		ExtensionBundleName="watchFolderPS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ExtensionList>
-		<Extension Id="watchFolderPS" Version="1.0.0" />
+		<Extension Id="watchFolderPS" Version="2.0.0" />
 	</ExtensionList>
 	<ExecutionEnvironment>
 		<HostList>
 			
-             <!-- Uncomment tags according to the apps you want your panel to support 
+            <!-- Uncomment tags according to the apps you want your panel to support 
 			Make sure to change these tags to use realistic version ranges before releasing your extensions, not 99.9!
 			You may also need to change the CEP version in order to support certain apps. -->
             
@@ -21,7 +21,7 @@
             <!-- InDesign -->
             <!-- <Host Name="IDSN" Version="[10.0,99.9]" /> -->
             
-             <!-- InCopy -->
+            <!-- InCopy -->
             <!-- <Host Name="AICY" Version="[10.0,99.9]" /> -->  
             
             <!-- Premiere -->
@@ -57,8 +57,8 @@
 				<MainPath>./index.html</MainPath>
 				<ScriptPath>./jsx/hostscript.jsx</ScriptPath>
 				<CEFCommandLine>   
-                    	    <Parameter>--enable-nodejs</Parameter>  
-                    	    <Parameter>--mixed-context</Parameter>  
+                	<Parameter>--enable-nodejs</Parameter>  
+                	<Parameter>--mixed-context</Parameter>  
 				</CEFCommandLine>
 				</Resources>
 				<Lifecycle>
@@ -69,17 +69,17 @@
 					<Menu>watchFolderPS</Menu>
 					<Geometry>
 						<Size>
-							<Height>300</Height>
+							<Height>500</Height>
 							<Width>300</Width>
 						</Size>
-                    <!--<MinSize>
-                            <Height>550</Height>
-                            <Width>400</Width>
+                    	<MinSize>
+                            <Height>250</Height>
+                            <Width>200</Width>
                         </MinSize>
                         <MaxSize>
-                            <Height>550</Height>
+                            <Height>650</Height>
                             <Width>400</Width>
-                        </MaxSize>-->
+                        </MaxSize>
                         
 					</Geometry>
 					<Icons>
