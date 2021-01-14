@@ -29,13 +29,14 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = () =>{
     const dispatch = useDispatch();
+    const setActionInit = async() =>{
+        const actions = await getActions();
+        if(actions===false)return;
+        dispatch(action_set(setAction(actions)));
+    }
     useMemo(()=>{
-        init();
-        (async()=>{
-            const actions = await getActions();
-            if(actions===false)return;
-            dispatch(action_set(setAction(actions)));
-        })();
+        init(setActionInit);
+        setActionInit();
     },[])
     return(
         <>

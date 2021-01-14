@@ -2,7 +2,7 @@ import * as chokidar from "chokidar";
 import * as fs from "fs";
 import * as path from "path";
 import { SendHostScript , HostObj } from "./connectHostScript";
-import { writeDebugData } from "../fileSystem/init";
+//import { writeDebugData } from "../fileSystem/init";
 import { StateType } from "../redux/stateType";
 
 interface WatchDataType{
@@ -48,7 +48,7 @@ export class WatchSystem implements WatchDataType{
                 });
                 console.log(flag);
                 if(!flag)return;
-                writeDebugData({path:filePath,options:this.options});
+                //writeDebugData({path:filePath,options:this.options});
                 (async()=>{
                     const flag = await this._Jsx.callHostScript({path:filePath,options:this.options});
                     console.log(flag);

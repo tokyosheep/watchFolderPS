@@ -25,10 +25,14 @@ const loadJsx = async(jsxFolder) =>{
     jsxes.forEach(jsx =>  csInterface.evalScript(`$.evalFile("${jsxFolder}/${jsx}")`));
 }
 
-const init = async() =>{
+const init = async(func) =>{
     csInterface.evalScript(`$.evalFile("${extensionRoot}json2.js")`);//json2読み込み
     await loadJsx(jsxParts);
-    //await loadJsx(polyFillFolder);
+    csInterface.addEventListener("applicationActivate",()=>{
+        setTimeout(()=>{
+            func();
+        },3000);
+    });
 }
 
 const openFolderDialog = () =>{
