@@ -73,7 +73,7 @@ function hostScript(obj){
 
 function getSavePath(isExport,watchFolder,exportFolder,ext){
     if(isExport)return exportFolder;
-    makefolder(watchFolder+ext+"/");
-    return watchFolder+ext+"/";
+    makefolder(watchFolder+"/"+ext);
+    return watchFolder+"/"+ext;
 }
 

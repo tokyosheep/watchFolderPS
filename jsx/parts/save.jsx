@@ -1,12 +1,13 @@
 function makefolder(){
     for(var no =0; no<arguments.length; no++){//引数に渡された数だけフォルダを作る
+        //alert((arguments[no]));
         var folderObj = new Folder(arguments[no]);
         folderObj.create();
     }
 }
 
 function saveExts(ext,path){
-    var file = path + app.activeDocument.name;
+    var file = path +"/"+ app.activeDocument.name;
     switch(ext){
         case "jpg":
             saveJpeg(file);
