@@ -102,7 +102,7 @@ function saveGIF(file){
     gifOpt.matte = MatteType.WHITE;
     gifOpt.palette = Palette.EXACT;
     gifOpt.preserveExactColors = false;
-    gifOpt.transparency = this.transfer;
+    gifOpt.transparency = true;
     activeDocument.saveAs(fileObj, gifOpt, true, Extension.LOWERCASE); 
 }
 

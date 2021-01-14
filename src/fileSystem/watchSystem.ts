@@ -40,7 +40,8 @@ export class WatchSystem implements WatchDataType{
             this._watcher
             .on("ready",()=>console.log("ready"))
             .on("add",filePath=>{
-                const flag = Object.entries(this.options.targetExts).filter(([key,value])=> value===true).some(([key,value])=> {
+                const targets = {...this.options.targetExts,"jpeg":this.options.targetExts.jpg,"tif":this.options.targetExts.tiff};
+                const flag = Object.entries(targets).filter(([key,value])=> value===true).some(([key,value])=> {
                     const ext = path.extname(filePath);
                     console.log(ext.substring(1,ext.length));
                     return ext.substring(1,ext.length) === key;
