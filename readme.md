@@ -38,3 +38,5 @@
 <h2>download packed file</h2>
 <p>download the zxp file blow the link and install use<a href="https://install.anastasiy.com/">Anastasiy’s Extension Manager</a></p>
 <a href="kawano-shuji.com/strage/watchFolderPS_x2.zxp">watch folder PS</a>
+
+<p>Japanese Explanation is <a href="https://kawano-shuji.com/justdiary/2021/01/15/extension-watchfolderps-ver2/">here</a></p>
