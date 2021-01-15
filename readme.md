@@ -1,7 +1,7 @@
 <h1>Extension Watch Folder PS</h1>
 <p>this is the Photoshop Extension to watch that image files are added in the folder</p>
 
-<img src="readmeImg/panel.jpg">
+<img src="readmeImg/panel.png">
 
 <h2>how to use it</h2>
 
@@ -30,12 +30,10 @@
     <li>
         <h3>export</h3>
         <p>
-            it exports image after open it. it must turn on with save options. without this option , the Extension makes folder and save image in it. if you turn on it , the Extension'll save image in the folder you selected on this option. you can't set same folder with watch.
+            it exports image after open it. it must turn on with save options. without this option , the Extension makes folder and saves image in it. if you turn on it , the Extension'll save image in the folder you selected on this option. you can't set same folder with watch.
         </p>
     </li>
 </ul>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z3spycglT1Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>download packed file</h2>
 <p>download the zxp file blow the link and install use<a href="https://install.anastasiy.com/">Anastasiy’s Extension Manager</a></p>
